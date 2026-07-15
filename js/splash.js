@@ -28,6 +28,6 @@ setTimeout(() => {
 
 setTimeout(() => {
 
-    window.location.href = "./html/onboarding-I.html";
+    window.location.href = "./html/onboarding-1.html";
 
 }, tempoLogo + pausa + fade);

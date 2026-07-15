@@ -1,0 +1,97 @@
+/* ==========================================================
+   ONBOARDING
+========================================================== */
+
+body{
+
+    background:var(--branco);
+
+}
+
+.onboarding{
+
+    min-height:100vh;
+
+    min-height:100dvh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:var(--esp-7);
+
+}
+
+.onboarding-conteudo{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.onboarding-conteudo img{
+
+    width:min(70vw,18rem);
+
+    margin-bottom:var(--esp-8);
+
+}
+
+.onboarding-conteudo p{
+
+    max-width:24rem;
+
+    margin-top:var(--esp-4);
+
+}
+
+.onboarding-rodape{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--esp-7);
+
+}
+
+.indicadores{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:var(--esp-3);
+
+}
+
+.indicadores span{
+
+    width:.65rem;
+
+    height:.65rem;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    transition:.35s;
+
+}
+
+.indicadores .ativo{
+
+    background:white;
+
+}

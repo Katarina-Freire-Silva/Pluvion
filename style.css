@@ -1,120 +1,105 @@
-/* ===========================
+/* ==========================================================
    RESET
-=========================== */
+========================================================== */
 
-*{
+*,
+*::before,
+*::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* ==========================================================
+   DOCUMENTO
+========================================================== */
+
 html{
     font-size:16px;
     scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
 }
 
 body{
     min-height:100vh;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0B5FFF;
-    color:#fff;
+    min-height:100dvh;
     overflow-x:hidden;
 }
 
-/* ===========================
-   VARIÁVEIS
-=========================== */
+/* ==========================================================
+   ELEMENTOS GERAIS
+========================================================== */
 
-:root{
-
-    --azul-principal:#0B5FFF;
-    --azul-secundario:#1D7CFF;
-    --azul-claro:#4DA6FF;
-
-    --branco:#FFFFFF;
-
-    --preto:#000000;
-
-}
-
-/* ===========================
-   CONTAINER PADRÃO
-=========================== */
-
-.container{
-
-    width:100%;
-    max-width:600px;
-
-    margin:auto;
-
-    min-height:100vh;
-
-    padding:24px;
-
-}
-
-/* ===========================
-   IMAGENS
-=========================== */
-
-img{
-
-    max-width:100%;
+img,
+picture,
+svg,
+video,
+canvas{
     display:block;
-
+    max-width:100%;
 }
 
-/* ===========================
-   BOTÕES
-=========================== */
-
-button{
-
-    border:none;
-    outline:none;
-    cursor:pointer;
-    font-family:inherit;
-
-}
-
-/* ===========================
-   INPUTS
-=========================== */
-
+button,
 input,
 textarea,
 select{
-
-    font-family:inherit;
+    font:inherit;
+    background:none;
+    border:none;
     outline:none;
-
 }
 
-/* ===========================
-   RESPONSIVIDADE
-=========================== */
+button{
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+ul,
+ol{
+    list-style:none;
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* ==========================================================
+   CONTAINER PADRÃO
+========================================================== */
+
+.container{
+    width:100%;
+    max-width:600px;
+    min-height:100vh;
+    min-height:100dvh;
+    margin:auto;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE GLOBAL
+========================================================== */
 
 /* Tablets */
 
 @media (min-width:768px){
 
     html{
-
         font-size:17px;
-
     }
 
 }
 
-/* Desktop */
+/* Notebook/Desktop */
 
 @media (min-width:1200px){
 
     html{
-
         font-size:18px;
-
     }
 
 }

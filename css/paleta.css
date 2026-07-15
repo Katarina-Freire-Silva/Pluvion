@@ -1,0 +1,71 @@
+/* ==========================================================
+   PALETA DE CORES
+========================================================== */
+
+:root{
+
+    /* Azul Principal */
+
+    --azul-900:#003E9C;
+    --azul-800:#0052CC;
+    --azul-700:#0B5FFF;
+    --azul-600:#2E73FF;
+    --azul-500:#4D8BFF;
+    --azul-400:#79A8FF;
+    --azul-300:#A7C7FF;
+    --azul-200:#D4E4FF;
+
+    /* Branco */
+
+    --branco:#FFFFFF;
+
+    /* Cinzas */
+
+    --cinza-900:#1B1B1B;
+    --cinza-800:#333333;
+    --cinza-700:#555555;
+    --cinza-600:#777777;
+    --cinza-500:#999999;
+    --cinza-400:#BBBBBB;
+    --cinza-300:#DDDDDD;
+    --cinza-200:#EEEEEE;
+    --cinza-100:#F8F8F8;
+
+    /* Preto */
+
+    --preto:#000000;
+
+    /* Feedback */
+
+    --sucesso:#00C853;
+    --erro:#FF3B30;
+    --alerta:#FFB300;
+    --informacao:#2196F3;
+
+    /* Sombras */
+
+    --sombra-leve:0 2px 10px rgba(0,0,0,.08);
+
+    --sombra-media:0 8px 25px rgba(0,0,0,.12);
+
+    --sombra-forte:0 15px 40px rgba(0,0,0,.18);
+
+    /* Bordas */
+
+    --borda-pequena:8px;
+    --borda-media:16px;
+    --borda-grande:24px;
+
+    /* Espaçamentos */
+
+    --esp-1:4px;
+    --esp-2:8px;
+    --esp-3:12px;
+    --esp-4:16px;
+    --esp-5:20px;
+    --esp-6:24px;
+    --esp-7:32px;
+    --esp-8:40px;
+    --esp-9:48px;
+
+}

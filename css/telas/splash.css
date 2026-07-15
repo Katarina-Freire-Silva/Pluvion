@@ -6,8 +6,25 @@ body{
 
     background:var(--azul-escuro);
 
+    animation:fundoEntrada 3s ease forwards;
+
 }
 
+@keyframes fundoEntrada{
+
+    from{
+
+        opacity:.70;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
 /* ==========================================================
    TELA
 ========================================================== */
@@ -48,14 +65,3 @@ body{
 
 }
 
-.logo h1{
-
-    color:var(--branco);
-
-    letter-spacing:.3rem;
-
-    text-transform:uppercase;
-
-    user-select:none;
-
-}

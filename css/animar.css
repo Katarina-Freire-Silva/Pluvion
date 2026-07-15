@@ -1,0 +1,65 @@
+/* ==========================================================
+   ANIMAÇÕES
+========================================================== */
+
+/* ----------------------------------------------------------
+   Splash
+---------------------------------------------------------- */
+
+.logo img{
+
+    opacity:0;
+
+    transform:
+        translateY(12px)
+        scale(.70);
+
+    animation:logoEntrada 3000ms cubic-bezier(.22,1,.36,1) forwards;
+
+}
+
+/* ----------------------------------------------------------
+   Entrada da Logo
+---------------------------------------------------------- */
+
+@keyframes logoEntrada{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translateY(12px)
+            scale(.70);
+
+    }
+
+    45%{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    70%{
+
+        transform:
+            translateY(0)
+            scale(1.008);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}

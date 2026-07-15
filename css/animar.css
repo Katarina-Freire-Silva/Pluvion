@@ -63,3 +63,31 @@
     }
 
 }
+
+/* ==========================================================
+   SAÍDA DA SPLASH
+========================================================== */
+
+.inicio.fade-out{
+
+    animation:splashSaida 700ms ease forwards;
+
+}
+
+@keyframes splashSaida{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:scale(1.02);
+
+    }
+
+}

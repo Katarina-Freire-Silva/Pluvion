@@ -42,9 +42,11 @@ body{
 
 .onboarding-conteudo img{
 
-    width:min(70vw,18rem);
+    max-width:100%;
 
-    margin-bottom:var(--esp-8);
+    height:auto;
+
+    margin-bottom:var(--esp-4);
 
 }
 
@@ -72,7 +74,9 @@ body{
 
     justify-content:center;
 
-    gap:var(--esp-3);
+    gap:0.3rem;
+
+    margin-bottom:var(--esp-7);
 
 }
 
@@ -84,14 +88,24 @@ body{
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.35);
+    background:var(--cinza);
 
     transition:.35s;
 
 }
 
+.onboarding-acoes{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--esp-4);
+
+}
+
 .indicadores .ativo{
 
-    background:white;
+    background:var(--azul-escuro);
 
 }

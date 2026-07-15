@@ -1,0 +1,120 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0B5FFF;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   VARIÁVEIS
+=========================== */
+
+:root{
+
+    --azul-principal:#0B5FFF;
+    --azul-secundario:#1D7CFF;
+    --azul-claro:#4DA6FF;
+
+    --branco:#FFFFFF;
+
+    --preto:#000000;
+
+}
+
+/* ===========================
+   CONTAINER PADRÃO
+=========================== */
+
+.container{
+
+    width:100%;
+    max-width:600px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    padding:24px;
+
+}
+
+/* ===========================
+   IMAGENS
+=========================== */
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+button{
+
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-family:inherit;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+input,
+textarea,
+select{
+
+    font-family:inherit;
+    outline:none;
+
+}
+
+/* ===========================
+   RESPONSIVIDADE
+=========================== */
+
+/* Tablets */
+
+@media (min-width:768px){
+
+    html{
+
+        font-size:17px;
+
+    }
+
+}
+
+/* Desktop */
+
+@media (min-width:1200px){
+
+    html{
+
+        font-size:18px;
+
+    }
+
+}

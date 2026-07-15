@@ -1,0 +1,61 @@
+/* ===========================
+   TELA INICIAL
+=========================== */
+
+.inicio{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.logo{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+}
+
+.logo h1{
+
+    font-size:3rem;
+
+    color:white;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+}
+
+/* Tablet */
+
+@media (min-width:768px){
+
+    .logo h1{
+
+        font-size:4rem;
+
+    }
+
+}
+
+/* Desktop */
+
+@media (min-width:1200px){
+
+    .logo h1{
+
+        font-size:5rem;
+
+    }
+
+}

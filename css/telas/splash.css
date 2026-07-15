@@ -9,17 +9,21 @@ body{
 }
 
 /* ==========================================================
-   TELA INICIAL
+   TELA
 ========================================================== */
 
 .inicio{
 
     width:100%;
+
     min-height:100vh;
+
     min-height:100dvh;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     padding:var(--esp-6);
@@ -33,9 +37,12 @@ body{
 .logo{
 
     display:flex;
-    justify-content:center;
-    align-items:center;
+
     flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
 
     text-align:center;
 
@@ -44,10 +51,6 @@ body{
 .logo h1{
 
     color:var(--branco);
-
-    font-size:clamp(3rem,8vw,5rem);
-
-    font-weight:700;
 
     letter-spacing:.3rem;
 

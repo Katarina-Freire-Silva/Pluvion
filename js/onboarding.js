@@ -66,13 +66,13 @@ function carregarPagina(){
 
     if(paginaAtual===2){
 
-        botao.textContent="Começar";
+        botao.textContent="COMEÇAR AGORA";
 
     }
 
     else{
 
-        botao.textContent="Próximo";
+        botao.textContent="PRÓXIMO";
 
     }
 

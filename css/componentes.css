@@ -83,3 +83,24 @@ table{
     border-top-left-radius:var(--borda-grande);
     border-bottom-right-radius:var(--borda-grande);
 }
+
+
+/* ==========================================================
+   INPUT
+========================================================== */
+
+.input{
+
+    width:100%;
+
+    height:3.25rem;
+
+    padding:0 1rem;
+
+    border:1px solid var(--azul-principal);
+
+    border-radius:1rem;
+
+    background:transparent;
+
+}

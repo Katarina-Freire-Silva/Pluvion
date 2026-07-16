@@ -23,7 +23,7 @@ body{
     align-items:center;
     text-align:center;
     gap:clamp(.5rem,2vw,1.25rem);
-    padding-top:clamp(2rem,7vh,8rem);
+    padding-top:clamp(2rem,8vh,9rem);
 }
 
 .onboarding-conteudo img{
@@ -65,7 +65,7 @@ body{
     flex-direction:column;
     align-items:center;
     gap:var(--esp-4);
-    padding-top:clamp(1rem,8vh,9rem);
+    padding-top:clamp(1rem,7vh,9rem);
 }
 
 .indicadores .ativo{

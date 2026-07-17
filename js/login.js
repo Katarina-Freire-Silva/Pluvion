@@ -2,22 +2,25 @@
    MOSTRAR SENHA
 ========================================================== */
 
-const senha=document.getElementById("senha");
+const senha = document.getElementById("senha");
 
-const mostrar=document.getElementById("mostrarSenha");
+const mostrar = document.getElementById("mostrarSenha");
 
-mostrar.addEventListener("click",()=>{
+const iconeSenha = document.getElementById("iconeSenha");
 
-    senha.type=
+mostrar.addEventListener("click", () => {
 
-        senha.type==="password"
+    const senhaVisivel = senha.type === "password";
 
-        ?"text"
+    senha.type = senhaVisivel
+        ? "text"
+        : "password";
 
-        :"password";
+    iconeSenha.textContent = senhaVisivel
+        ? "visibility"
+        : "visibility_off";
 
 });
-
 /* ==========================================================
    VOLTAR
 ========================================================== */
@@ -45,3 +48,4 @@ document
     trocarPagina("cadastro.html");
 
 });
+

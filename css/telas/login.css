@@ -15,38 +15,22 @@ body{
 .login{
 
     position:fixed;
-
     inset:0;
-
     display:flex;
-
     align-items:flex-end;
-
 }
 
 
 .login-card{
-
     width:100%;
-
     min-height:85dvh;
-
     background:var(--branco);
-
     border-radius:2rem 2rem 0 0;
-
     display:flex;
-
     flex-direction:column;
-
+    align-items:center;
 }
 
-.login-form,
-.voltar{
-
-    padding-inline:var(--esp-6);
-
-}
 
 /* ==========================================================
    TOPO
@@ -64,7 +48,6 @@ body{
     font-size:var(--fs-900);
     text-align:center;
     margin-bottom:3rem;
-
 }
 
 /* ==========================================================
@@ -73,29 +56,31 @@ body{
 
 .login-form{
 
+    gap: var(--esp-4);
     display:flex;
-
     flex-direction:column;
-
-    gap:1.35rem;
-
-    margin-top:1rem;
-
+    align-self:center;
 }
 
 .campo{
-
     display:flex;
-
+    width:100%;
     flex-direction:column;
+    gap:.75rem;
+    margin-block-end:var(--esp-4);
+}
 
-    gap:.5rem;
+
+.campo:first-child{
+
+    margin-bottom: 5rem;
 
 }
 
 .campo-senha{
 
     position:relative;
+    width:100%;
 
 }
 
@@ -121,8 +106,3 @@ body{
 
 }
 
-.btn-secundario{
-
-    align-self:center;
-
-}

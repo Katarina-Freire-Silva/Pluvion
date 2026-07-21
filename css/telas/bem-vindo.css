@@ -1,0 +1,43 @@
+/* ==========================================================
+   ONBOARDING
+========================================================== */
+
+body{
+
+    background:var(--branco);
+
+}
+
+.bem-vindo{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-items:center;
+    transform:translateY(50%);
+}
+
+.bem-vindo-conteudo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:clamp(.5rem,2vw,1.25rem);
+}
+
+.bem-vindo-conteudo img{
+    max-width:100%;
+    height:auto;
+}
+
+.bem-vindo-conteudo p{
+    max-width:18rem;
+}
+
+#titulo{
+    margin-bottom:clamp(1rem,3vh,2rem);
+}
+
+#descricao{
+    margin-top:0;
+}

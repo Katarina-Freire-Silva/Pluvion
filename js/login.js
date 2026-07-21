@@ -21,6 +21,7 @@ mostrar.addEventListener("click", () => {
         : "visibility_off";
 
 });
+
 /* ==========================================================
    VOLTAR
 ========================================================== */
@@ -49,3 +50,18 @@ document
 
 });
 
+/* ==========================================================
+   ESQUECI A SENHA
+========================================================== */
+
+document
+
+.getElementById("esqueciSenha")
+
+.addEventListener("click",(evento)=>{
+
+    evento.preventDefault();
+
+    trocarPagina("redefinir-senha.html");
+
+});

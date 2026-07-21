@@ -67,8 +67,8 @@ table{
     background:var(--azul-escuro);
     color:var(--branco);
     border:1px solid var(--azul-principal);
-    border-top-right-radius:var(--borda-grande);
-    border-bottom-left-radius:var(--borda-grande);
+    border-top-right-radius:var(--borda-media);
+    border-bottom-left-radius:var(--borda-media);
 }
 
 .btn-primario:hover{
@@ -80,8 +80,8 @@ table{
     background:transparent;
     color:var(--azul-escuro);
     border:1px solid var(--azul-principal);
-    border-top-left-radius:var(--borda-grande);
-    border-bottom-right-radius:var(--borda-grande);
+    border-top-left-radius:var(--borda-media);
+    border-bottom-right-radius:var(--borda-media);
 }
 
 
@@ -97,6 +97,6 @@ input{
     padding:0 1rem 0 1rem;
     color:var(--cinza);
     border:1px solid var(--azul-principal);
-    border-top-right-radius:var(--borda-grande);
-    border-bottom-left-radius:var(--borda-grande);
+    border-top-right-radius:var(--borda-media);
+    border-bottom-left-radius:var(--borda-media);
 }

@@ -1,0 +1,119 @@
+/* ==========================================================
+   LOGIN
+========================================================== */
+
+body{
+
+    background:var(--branco);
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.login{
+        
+    display:flex;
+    position:fixed;
+    inset:0;
+    align-items:flex-end;
+    width:100%;
+    min-height:85dvh;
+    flex-direction:column;
+}
+
+
+/* ==========================================================
+   TOPO
+========================================================== */
+
+#voltar{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:100%;
+    padding:3rem 0 0 3rem;
+}
+
+.login h1{
+    font-size:var(--fs-900);
+    margin-bottom:2rem;
+    align-self:center;
+}
+
+/* ==========================================================
+   FORMULÁRIO
+========================================================== */
+
+.login-form{
+
+    gap: var(--esp-4);
+    display:flex;
+    flex-direction:column;
+    align-self:center;
+}
+
+.campo{
+    display:flex;
+    width:100%;
+    flex-direction:column;
+    gap:.75rem;
+    margin-block-end:var(--esp-1);
+    margin-bottom:2rem;
+
+}
+
+
+.campo:has(#senha){
+    margin-bottom:4rem;
+}
+
+.campo-senha{
+
+    position:relative;
+    width:100%;
+
+}
+
+.campo-senha button{
+
+    position:absolute;
+
+    right:1rem;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+.esqueci{
+
+    text-align:center;
+
+    font-size:var(--fs-200);
+
+    color:var(--preto);
+    margin-bottom:3rem;
+
+}
+
+#cadastro{
+
+    text-align:center;
+
+    font-size:var(--fs-200);
+
+    color:var(--preto);
+    margin-bottom:3rem;
+
+}
+
+.btn-login{
+
+    width:85%;
+    align-self:center;
+
+}
+

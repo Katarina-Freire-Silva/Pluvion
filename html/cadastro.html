@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../css/componentes.css">
     <link rel="stylesheet" href="../css/animar.css">
 
-    <link rel="stylesheet" href="../css/telas/login.css">
+    <link rel="stylesheet" href="../css/telas/cadastro.css">
 
 </head>
 
@@ -29,99 +29,93 @@
 
 <main class="login">
 
-    <section class="login-card">
+    <button
+        class="voltar"
+        id="voltar">
+
+        <span class="material-symbols-outlined"> arrow_back </span>
+
+    </button>
+
+    <h1>Cadastro</h1>
+
+    <form
+        class="login-form"
+        autocomplete="off">
+
+        <div class="campo">
+
+            <label for="nome">
+
+                NOME
+
+            </label>
+                
+
+            <input
+                id="nome"
+                type="text"
+                placeholder="Digite seu nome">
+
+        </div>
+
+        <div class="campo">
+
+            <label for="email">
+
+                E-MAIL
+
+            </label>
+                
+
+            <input
+                id="email"
+                type="email"
+                placeholder="Digite seu e-mail">
+
+        </div>
+
+        <div class="campo">
+
+            <label for="senha">
+
+                SENHA
+
+            </label>
+
+            <div class="campo-senha">
+
+                <input
+                    id="senha"
+                    type="password"
+                    placeholder="Digite sua senha">
+
+                <button
+                    type="button"
+                    id="mostrarSenha">
+
+                    <span 
+                    id="iconeSenha"
+                    class="material-symbols-outlined"> visibility_off </span>
+
+                </button>
+
+            </div>
+
+        </div>
 
         <button
-            class="voltar"
-            id="voltar">
+                class="btn btn-primario btn-login">
 
-            <span class="material-symbols-outlined"> arrow_back </span>
+                CRIAR
 
         </button>
 
-        <h1>Login</h1>
-
-        <form
-            class="login-form"
-            autocomplete="off">
-
-            <div class="campo">
-
-                <label for="email">
-
-                    E-MAIL
-
-                </label>
-                
-
-                <input
-                    id="email"
-                    type="email"
-                    placeholder="Digite seu e-mail">
-
-            </div>
-
-            <div class="campo">
-
-                <label for="senha">
-
-                    SENHA
-
-                </label>
-
-                <div class="campo-senha">
-
-                    <input
-                        id="senha"
-                        type="password"
-                        placeholder="Digite sua senha">
-
-                    <button
-                        type="button"
-                        id="mostrarSenha">
-
-                        <span 
-                        id="iconeSenha"
-                        class="material-symbols-outlined"> visibility_off </span>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <button
-                type="button"
-                class="esqueci"
-                id="esqueciSenha">
-
-                Esqueci a senha
-
-            </button>
-
-            <button
-                class="btn btn-primario btn-login">
-
-                ENTRAR
-
-            </button>
-
-            <button
-                type="button"
-                id="cadastro">
-
-                Não tenho login
-
-            </button>
-
-        </form>
-
-    </section>
-
+    </form>
 </main>
 
 <script src="../js/transition.js"></script>
-<script src="../js/login.js"></script>
+<script src="../js/cadastro.js"></script>
 
 </body>
 

@@ -283,44 +283,30 @@ function carregarPagina(){
             conteudo.innerHTML = `
 
                 <div class="confirmacao-endereco">
-
-                    <h3>Esse é seu endereço?</h3>
-
                     <p>
 
-                        ${localStorage.getItem("rua") || ""}
+                        ${localStorage.getItem("rua") || "Não informado"}
 
                     </p>
 
                     <p>
 
-                        ${localStorage.getItem("bairro") || ""}
+                        ${localStorage.getItem("bairro") || "Não informado"}
 
                     </p>
 
                     <p>
 
-                        ${localStorage.getItem("cidade")}
-
-                        -
-
-                        ${localStorage.getItem("estado")}
+                        ${localStorage.getItem("cidade")} - ${localStorage.getItem("estado")}
 
                     </p>
-
-                    <p>
-
-                        CEP: ${localStorage.getItem("cep")}
-
-                    </p>
-
                 </div>
 
                 <button
-                    class="btn btn-secundario"
+                    class="alterar-endereco"
                     id="editarEndereco">
 
-                    ALTERAR ENDEREÇO
+                    Não é este o endereço
 
                 </button>
 

@@ -1,4 +1,29 @@
 /* ==========================================================
+   MOSTRAR SENHA
+========================================================== */
+
+const senha = document.getElementById("senha");
+
+const mostrar = document.getElementById("mostrarSenha");
+
+const iconeSenha = document.getElementById("iconeSenha");
+
+mostrar.addEventListener("click", () => {
+
+    const senhaVisivel = senha.type === "password";
+
+    senha.type = senhaVisivel
+        ? "text"
+        : "password";
+
+    iconeSenha.textContent = senhaVisivel
+        ? "visibility"
+        : "visibility_off";
+
+});
+
+
+/* ==========================================================
    VOLTAR
 ========================================================== */
 

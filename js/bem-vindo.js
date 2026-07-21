@@ -2,42 +2,456 @@
    NOME DO USUÁRIO
 ========================================================== */
 
+const nome = localStorage.getItem("nomeUsuario") || "Usuário";
+
+/* ==========================================================
+   PÁGINAS
+========================================================== */
+
+const paginas = [
+
+{
+
+    imagem:"../images/onboarding/on-1.svg",
+
+    titulo:`É uma alegria te ver, ${nome}!`,
+
+    descricao:"Aproveite ao máximo o Pluvion, tudo foi feito com muito carinho e cuidado para que você tenha a melhor experiência possível.",
+
+    tipo:"boasVindas"
+
+},
+
+{
+
+    imagem:"../images/onboarding/on-2.svg",
+
+    titulo:"Como deseja filtrar sua localização?",
+
+    descricao:"Escolha a forma que preferir.",
+
+    tipo:"localizacao"
+
+},
+
+{
+
+    imagem:"../images/onboarding/on-3.svg",
+
+    titulo:"Informe seu CEP",
+
+    descricao:"Utilizaremos o CEP para personalizar seus alertas.",
+
+    tipo:"cep"
+
+},
+
+{
+
+    imagem:"../images/onboarding/on-3.svg",
+
+    titulo:"Confirme seu endereço",
+
+    descricao:"Confira se as informações abaixo estão corretas antes de continuar.",
+
+    tipo:"confirmacao"
+
+}
+
+];
+
+let paginaAtual = 0;
+
+const imagem = document.getElementById("imagem");
 const titulo = document.getElementById("tituloBemVindo");
+const descricao = document.getElementById("descricaoBemVindo");
+const conteudo = document.getElementById("conteudoExtra");
+const botao = document.getElementById("proximo");
+const indicadores = document.querySelectorAll(".indicadores span");
 
-const nome = localStorage.getItem("nomeUsuario");
+/* ==========================================================
+   BUSCAR ENDEREÇO PELO CEP
+========================================================== */
 
-if (nome) {
+async function buscarCep(cep){
 
-    titulo.textContent = `Que alegria te ver, ${nome}!`;
+    try{
+
+        const resposta = await fetch(
+
+            `https://brasilapi.com.br/api/cep/v2/${cep}`
+
+        );
+
+        if(!resposta.ok){
+
+            throw new Error();
+
+        }
+
+        const dados = await resposta.json();
+
+        localStorage.setItem("cep", dados.cep);
+
+        localStorage.setItem("cidade", dados.city);
+
+        localStorage.setItem("estado", dados.state);
+
+        localStorage.setItem("bairro", dados.neighborhood);
+
+        localStorage.setItem("rua", dados.street);
+
+        paginaAtual = 3;
+
+        carregarPagina();
+    }
+
+    catch{
+
+        alert("CEP não encontrado.");
+
+    }
 
 }
 
 /* ==========================================================
-   ANIMAÇÃO
+   BUSCAR ENDEREÇO PELA LOCALIZAÇÃO
 ========================================================== */
 
-const tela = document.querySelector(".bem-vindo");
+async function buscarEndereco(latitude, longitude){
 
-/* tempo da tela */
+    try{
 
-const tempo = 2500;
+        const resposta = await fetch(
 
-/* pausa */
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
 
-const pausa = 500;
+        );
 
-/* fade */
+        const dados = await resposta.json();
 
-const fade = 700;
+        localStorage.setItem("latitude", latitude);
 
-setTimeout(() => {
+        localStorage.setItem("longitude", longitude);
 
-    tela.classList.add("fade-out");
+        localStorage.setItem(
 
-}, tempo + pausa);
+            "cidade",
 
-setTimeout(() => {
+            dados.address.city ||
 
-    window.location.href = "dashboard.html";
+            dados.address.town ||
 
-}, tempo + pausa + fade);
+            dados.address.village ||
+
+            ""
+
+        );
+
+        localStorage.setItem(
+
+            "estado",
+
+            dados.address.state || ""
+
+        );
+
+        localStorage.setItem(
+
+            "bairro",
+
+            dados.address.suburb || ""
+
+        );
+
+        localStorage.setItem(
+
+            "rua",
+
+            dados.address.road || ""
+
+        );
+
+        localStorage.setItem(
+
+            "cep",
+
+            dados.address.postcode || ""
+
+        );
+
+        paginaAtual = 3;
+
+        carregarPagina();
+    }
+
+    catch{
+
+        alert("Não foi possível localizar sua região.");
+
+    }
+
+}
+
+function carregarPagina(){
+
+    const voltar = document.getElementById("voltar");
+    voltar.style.display =
+
+    paginaAtual===0
+
+    ? "none"
+
+    : "flex";
+
+
+    const pagina = paginas[paginaAtual];
+
+    imagem.src = pagina.imagem;
+
+    titulo.textContent = pagina.titulo;
+
+    descricao.textContent = pagina.descricao;
+
+    indicadores.forEach((item,index)=>{
+
+        item.classList.toggle(
+
+            "ativo",
+
+            index===paginaAtual
+
+        );
+
+    });
+
+    conteudo.innerHTML="";
+
+    switch(pagina.tipo){
+
+        case "boasVindas":
+
+            botao.textContent="CONTINUAR";
+
+        break;
+
+        case "localizacao":
+
+            conteudo.innerHTML=`
+
+                <button
+                    class="btn btn-primario"
+                    id="usarLocalizacao">
+
+                    USAR MINHA LOCALIZAÇÃO
+
+                </button>
+
+                <button
+                    class="btn btn-secundario"
+                    id="usarCep">
+
+                    INFORMAR CEP
+
+                </button>
+
+            `;
+
+            botao.style.display="none";
+
+        break;
+
+        case "cep":
+
+            conteudo.innerHTML=`
+
+                <input
+                    id="cep"
+                    type="text"
+                    placeholder="Digite seu CEP">
+
+            `;
+
+            botao.textContent="CONTINUAR";
+
+            botao.style.display="block";
+
+        break;
+
+        case "confirmacao":
+
+            conteudo.innerHTML = `
+
+                <div class="confirmacao-endereco">
+
+                    <h3>Esse é seu endereço?</h3>
+
+                    <p>
+
+                        ${localStorage.getItem("rua") || ""}
+
+                    </p>
+
+                    <p>
+
+                        ${localStorage.getItem("bairro") || ""}
+
+                    </p>
+
+                    <p>
+
+                        ${localStorage.getItem("cidade")}
+
+                        -
+
+                        ${localStorage.getItem("estado")}
+
+                    </p>
+
+                    <p>
+
+                        CEP: ${localStorage.getItem("cep")}
+
+                    </p>
+
+                </div>
+
+                <button
+                    class="btn btn-secundario"
+                    id="editarEndereco">
+
+                    ALTERAR ENDEREÇO
+
+                </button>
+
+            `;
+
+            botao.textContent="CONTINUAR";
+
+            botao.style.display="block";
+
+        break;
+
+    }
+
+}
+
+botao.addEventListener("click",()=>{
+
+    if(paginaAtual<2){
+
+        paginaAtual++;
+
+        carregarPagina();
+
+    }
+
+    else if(paginaAtual===2){
+
+        const cep=document
+
+            .getElementById("cep")
+
+            .value
+
+            .replace(/\D/g,"");
+
+        if(cep.length!==8){
+
+            alert("Informe um CEP válido.");
+
+            return;
+
+        }
+
+        buscarCep(cep);
+
+    }
+
+    else{
+
+        window.location.href="dashboard.html";
+
+    }
+
+});
+
+document.addEventListener("click",(evento)=>{
+
+    if(evento.target.id==="usarCep"){
+
+        paginaAtual=2;
+
+        carregarPagina();
+
+    }
+
+    if(evento.target.id==="usarLocalizacao"){
+
+        navigator.geolocation.getCurrentPosition(
+
+            (posicao)=>{
+
+                buscarEndereco(
+
+                    posicao.coords.latitude,
+
+                    posicao.coords.longitude
+
+                );
+
+            },
+
+            (erro)=>{
+
+                console.log(erro);
+
+                alert("Não foi possível obter sua localização.");
+
+            },
+
+            {
+
+                enableHighAccuracy:true,
+
+                timeout:10000,
+
+                maximumAge:0
+
+            }
+
+        );
+
+    }
+
+    if(evento.target.id==="editarEndereco"){
+
+        paginaAtual = 2;
+
+        carregarPagina();
+
+    }
+
+});
+
+/* ==========================================================
+   BOTÃO VOLTAR
+========================================================== */
+
+document
+
+.getElementById("voltar")
+
+.addEventListener("click",()=>{
+
+    if(paginaAtual>0){
+
+        paginaAtual--;
+
+        carregarPagina();
+
+    }
+
+});
+
+carregarPagina();

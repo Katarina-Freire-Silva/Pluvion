@@ -13,7 +13,7 @@ body{
     flex-direction:column;
     align-items:center;
     justify-items:center;
-    transform:translateY(50%);
+    grid-template-rows: auto 1fr auto;  
 }
 
 .bem-vindo-conteudo{
@@ -23,6 +23,7 @@ body{
     align-items:center;
     text-align:center;
     gap:clamp(.5rem,2vw,1.25rem);
+    padding-top:clamp(2rem,8vh,9rem);
 }
 
 .bem-vindo-conteudo img{
@@ -34,10 +35,60 @@ body{
     max-width:18rem;
 }
 
+#voltar{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:100%;
+    padding:0 0 0 2rem;
+}
+
+
 #titulo{
     margin-bottom:clamp(1rem,3vh,2rem);
 }
 
 #descricao{
     margin-top:0;
+}
+
+#usarLocalizacao{
+    max-width: 18rem;
+    margin-bottom: 1rem;
+
+}
+
+#editarEndereco{
+    max-width: 18rem;
+}
+
+.indicadores{
+    display:flex;
+    justify-content:center;
+    gap:0.1rem;
+    margin-bottom:var(--esp-4);
+}
+
+.indicadores span{
+    width:.63rem;
+    height:.63rem;
+    border-radius:50%;
+    background:var(--cinza);
+    transition:.35s;
+}
+
+.bem-vindo-acoes{
+    display:flex;
+    width:18rem;
+    flex-direction:column;
+    align-items:center;
+    gap:var(--esp-4);
+    padding-top:clamp(1rem,7vh,9rem);
+}
+
+.indicadores .ativo{
+    width:.90rem;
+    border-radius:40%;
+    background:var(--azul-escuro);
+
 }

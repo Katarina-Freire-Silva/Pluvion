@@ -11,6 +11,8 @@
 
     <title>Pluvion</title>
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
     <link rel="stylesheet" href="../reset.css">
 
     <link rel="stylesheet" href="../css/paleta.css">
@@ -28,22 +30,52 @@
     <main class="bem-vindo">
 
         <section class="bem-vindo-conteudo">
+            <button
+                class="voltar"
+                id="voltar">
+
+                <span class="material-symbols-outlined">
+
+                    arrow_back
+
+                </span>
+
+            </button>
 
             <img
                 id="imagem"
                 src="../images/onboarding/on-1.svg"
-                alt="Onboarding">
-            <h1
-                class="bem-vindo-titulo"
-                id="tituloBemVindo">
+                alt="Bem-vindo">
 
-                Que alegria te ver!
+            <div class="indicadores">
 
-            </h1>
+                <span class="ativo"></span>
+                <span></span>
+                <span></span>
 
-            <p class="bem-vindo-descricao">Aproveite ao máximo o Pluvion, tudo foi feito com muito carinho e cuidado para que você tenha a melhor experiência possível.</p>
+            </div>
+
+            <h1 id="tituloBemVindo"></h1>
+
+            <p id="descricaoBemVindo"></p>
+
+            <div id="conteudoExtra"></div>
 
         </section>
+
+        <section class="bem-vindo-acoes">
+
+            <button
+                class="btn btn-primario"
+                id="proximo">
+
+                CONTINUAR
+
+            </button>
+
+        </section>
+
+    </main>
     <script src="../js/bem-vindo.js"></script>
 
 </body>

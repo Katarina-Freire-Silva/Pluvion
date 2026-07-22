@@ -28,13 +28,6 @@ body{
    TOPO
 ========================================================== */
 
-#voltar{
-    display:flex;
-    justify-content:flex-start;
-    align-items:center;
-    width:100%;
-    padding:3rem 0 0 3rem;
-}
 
 .login h1{
     font-size:var(--fs-900);

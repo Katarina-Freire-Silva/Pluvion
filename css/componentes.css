@@ -99,3 +99,12 @@ input{
     border-top-right-radius:var(--borda-media);
     border-bottom-left-radius:var(--borda-media);
 }
+
+#voltar{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:100%;
+    padding:3rem 0 0 3rem;
+}
+

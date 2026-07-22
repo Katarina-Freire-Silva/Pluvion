@@ -118,107 +118,6 @@ async function buscarCep(cep){
    BUSCAR ENDEREÇO PELA LOCALIZAÇÃO
 ========================================================== */
 
-async function buscarEndereco(latitude, longitude){
-
-    try{
-
-        const resposta = await fetch(
-
-        `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`,
-
-        {
-
-            headers:{
-
-                "Accept-Language":"pt-BR"
-
-            }
-
-        }
-
-        );
-
-        const dados = await resposta.json();
-        const endereco = dados.address;
-
-        localStorage.setItem("latitude", latitude);
-
-        localStorage.setItem("longitude", longitude);
-
-        localStorage.setItem(
-
-            "cidade",
-
-            endereco.city ||
-
-            endereco.town ||
-
-            endereco.village ||
-
-            endereco.municipality ||
-
-            ""
-
-        );
-
-        localStorage.setItem(
-
-            "estado",
-
-            endereco.state || ""
-
-        );
-
-        localStorage.setItem(
-
-            "bairro",
-
-            endereco.suburb ||
-
-            endereco.neighbourhood ||
-
-            endereco.city_district ||
-
-            endereco.quarter ||
-
-            ""
-
-        );
-
-        localStorage.setItem(
-
-            "rua",
-
-            endereco.road ||
-
-            endereco.pedestrian ||
-
-            endereco.residential ||
-
-            ""
-
-        );
-
-        localStorage.setItem(
-
-            "cep",
-
-            endereco.postcode || ""
-
-        );
-
-        paginaAtual = 3;
-
-        carregarPagina();
-    }
-
-    catch{
-
-        alert("Não foi possível localizar sua região.");
-
-    }
-
-}
 
 function carregarPagina(){
 
@@ -270,14 +169,6 @@ function carregarPagina(){
 
                 <button
                     class="btn btn-primario"
-                    id="usarLocalizacao">
-
-                    USAR MINHA LOCALIZAÇÃO
-
-                </button>
-
-                <button
-                    class="btn btn-secundario"
                     id="usarCep">
 
                     INFORMAR CEP

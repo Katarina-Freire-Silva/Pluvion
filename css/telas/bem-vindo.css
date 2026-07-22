@@ -43,8 +43,8 @@ body{
     margin-top:0;
 }
 
-#usarLocalizacao{
-    max-width: 18rem;
+#usarCep{
+    width: 18rem;
     margin-bottom: 1rem;
 
 }

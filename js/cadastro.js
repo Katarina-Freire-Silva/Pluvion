@@ -33,7 +33,7 @@ document
 
 .addEventListener("click",()=>{
 
-    history.back();
+    window.location.href = "login.html";
 
 });
 

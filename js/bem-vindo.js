@@ -124,11 +124,22 @@ async function buscarEndereco(latitude, longitude){
 
         const resposta = await fetch(
 
-            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+        `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}&zoom=18&addressdetails=1`,
+
+        {
+
+            headers:{
+
+                "Accept-Language":"pt-BR"
+
+            }
+
+        }
 
         );
 
         const dados = await resposta.json();
+        const endereco = dados.address;
 
         localStorage.setItem("latitude", latitude);
 
@@ -138,11 +149,13 @@ async function buscarEndereco(latitude, longitude){
 
             "cidade",
 
-            dados.address.city ||
+            endereco.city ||
 
-            dados.address.town ||
+            endereco.town ||
 
-            dados.address.village ||
+            endereco.village ||
+
+            endereco.municipality ||
 
             ""
 
@@ -152,7 +165,7 @@ async function buscarEndereco(latitude, longitude){
 
             "estado",
 
-            dados.address.state || ""
+            endereco.state || ""
 
         );
 
@@ -160,7 +173,15 @@ async function buscarEndereco(latitude, longitude){
 
             "bairro",
 
-            dados.address.suburb || ""
+            endereco.suburb ||
+
+            endereco.neighbourhood ||
+
+            endereco.city_district ||
+
+            endereco.quarter ||
+
+            ""
 
         );
 
@@ -168,7 +189,13 @@ async function buscarEndereco(latitude, longitude){
 
             "rua",
 
-            dados.address.road || ""
+            endereco.road ||
+
+            endereco.pedestrian ||
+
+            endereco.residential ||
+
+            ""
 
         );
 
@@ -176,7 +203,7 @@ async function buscarEndereco(latitude, longitude){
 
             "cep",
 
-            dados.address.postcode || ""
+            endereco.postcode || ""
 
         );
 
@@ -231,7 +258,9 @@ function carregarPagina(){
 
         case "boasVindas":
 
-            botao.textContent="CONTINUAR";
+            botao.style.display = "block";
+
+            botao.textContent = "CONTINUAR";
 
         break;
 
@@ -374,9 +403,19 @@ document.addEventListener("click",(evento)=>{
 
     if(evento.target.id==="usarLocalizacao"){
 
-        navigator.geolocation.getCurrentPosition(
+        const id = navigator.geolocation.watchPosition(
 
             (posicao)=>{
+
+                console.log("Precisão:", posicao.coords.accuracy);
+
+                if(posicao.coords.accuracy > 30){
+
+                    return;
+
+                }
+
+                navigator.geolocation.clearWatch(id);
 
                 buscarEndereco(
 
@@ -400,7 +439,7 @@ document.addEventListener("click",(evento)=>{
 
                 enableHighAccuracy:true,
 
-                timeout:10000,
+                timeout:30000,
 
                 maximumAge:0
 

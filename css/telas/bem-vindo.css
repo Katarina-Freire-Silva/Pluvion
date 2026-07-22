@@ -1,5 +1,5 @@
 /* ==========================================================
-   ONBOARDING
+   INTRODUÇÃO DO USUÁRIO (BEM-VINDO)
 ========================================================== */
 
 body{
@@ -11,9 +11,6 @@ body{
 .bem-vindo{
     display:flex;
     flex-direction:column;
-    align-items:center;
-    justify-items:center;
-    grid-template-rows: auto 1fr auto;  
 }
 
 .bem-vindo-conteudo{
@@ -23,7 +20,7 @@ body{
     align-items:center;
     text-align:center;
     gap:clamp(.5rem,2vw,1.25rem);
-    padding-top:clamp(2rem,8vh,9rem);
+    padding-top: clamp(3rem,3vw,50rem);
 }
 
 .bem-vindo-conteudo img{
@@ -35,6 +32,7 @@ body{
     max-width:18rem;
     margin-top:0;
 }
+
 
 #titulo{
     margin-bottom:clamp(1rem,3vh,2rem);
@@ -48,6 +46,11 @@ body{
     max-width: 18rem;
     margin-bottom: 1rem;
 
+}
+
+#voltar{
+    padding-top: 0;
+    padding-bottom: clamp(1rem,1vh,1rem);;
 }
 
 .alterar-endereco{
@@ -101,7 +104,8 @@ body{
     display:flex;
     width:18rem;
     flex-direction:column;
-    align-items:center;
+    align-self:center;
+    justify-content: center;
     gap:var(--esp-4);
     padding-top:clamp(1rem,7vh,9rem);
 }

@@ -100,7 +100,7 @@ input{
     border-bottom-left-radius:var(--borda-media);
 }
 
-#voltar{
+.voltar{
     display:flex;
     justify-content:flex-start;
     align-items:center;

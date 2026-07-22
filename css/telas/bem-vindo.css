@@ -1,3 +1,4 @@
+
 /* ==========================================================
    INTRODUÇÃO DO USUÁRIO (BEM-VINDO)
 ========================================================== */
@@ -114,5 +115,28 @@ body{
     width:.90rem;
     border-radius:40%;
     background:var(--azul-escuro);
+
+}
+
+@media (max-height: 700px){
+
+    .bem-vindo-conteudo{
+
+        padding-top:2rem;
+        gap:.15rem;
+
+    }
+
+    #voltar{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+
+    .bem-vindo-acoes{
+
+        padding-top:.5rem;
+
+    }
 
 }

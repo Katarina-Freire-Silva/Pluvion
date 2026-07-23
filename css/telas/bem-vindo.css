@@ -118,12 +118,12 @@ body{
 
 }
 
-@media (max-height: 750px){
+@media (max-height: 790px){
 
     .bem-vindo-conteudo{
 
         padding-top:2rem;
-        gap:.15rem;
+        gap:.26rem;
 
     }
 
@@ -132,10 +132,13 @@ body{
         padding-bottom: 0;
     }
 
+    .confirmacao-endereco p{
+        padding: 0.6rem;
+    }
 
     .bem-vindo-acoes{
 
-        padding-top:.5rem;
+        padding-top:0.5rem;
 
     }
 

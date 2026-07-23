@@ -85,3 +85,14 @@ body{
 
 }
 
+
+@media (max-height: 750px){
+    .campo:first-child{
+
+        margin-bottom: 3rem;
+
+    }
+
+}
+
+

@@ -348,6 +348,13 @@ function carregarAlertas(){
                 </h4>
 
                 <p>
+                    <span
+                        class="material-symbols-outlined" id="local-pin">
+
+                        location_on
+
+                    </span>
+
 
                     ${alerta.local}
 

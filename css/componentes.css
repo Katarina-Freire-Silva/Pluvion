@@ -108,3 +108,212 @@ input{
     padding:3rem 0 0 3rem;
 }
 
+
+/* ==========================================================
+   COMPONENTES DO DASHBOARD EM DIANTE
+========================================================== */
+
+
+
+/* ==========================================================
+   CARD PADRÃO
+========================================================== */
+
+.card{
+    width:100%;
+    background:var(--branco);
+    border-radius:var(--borda-grande);
+    box-shadow:var(--sombra-leve);
+    min-height: 10rem;
+    padding:1.25rem;
+    overflow:hidden;
+}
+
+/* ==========================================================
+   ALERTAS
+========================================================== */
+
+.card-alerta{
+
+    display:flex;
+    width: 100%;
+    align-items:center;
+    border-radius: 5rem;
+    background:var(--branco);
+    box-shadow:var(--sombra-leve);
+    transition:.25s;
+    min-height:5rem;
+    padding:1rem 1.25rem;
+    margin-bottom:1rem;
+
+}
+
+.card-alerta:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--sombra-media);
+
+}
+
+/* ==========================================================
+   ALERTA VAZIO
+========================================================== */
+
+.alerta-vazio{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:7rem;
+
+    padding:2rem;
+
+    border-radius:var(--borda-media);
+
+    background:var(--branco);
+
+    color:var(--cinza);
+
+    box-shadow:var(--sombra-leve);
+
+    line-height:1.5;
+
+}
+
+/* ==========================================================
+   LOCALIZAÇÃO
+========================================================== */
+
+
+.localizacao{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:999px;
+
+    background:var(--azul-claro);
+
+}
+
+.localizacao strong{
+
+    color:var(--azul-escuro);
+
+    font-size:var(--fs-100);
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.status{
+
+    width:.9rem;
+    height: .9rem;
+    border-radius:50%;
+    margin-inline-end: 1rem;
+
+}
+
+/* ==========================================================
+   AVATAR
+========================================================== */
+
+.avatar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:3rem;
+    height:3rem;
+    overflow:hidden;
+    border-radius:50%;
+    background:var(--azul-claro);
+    box-shadow:var(--sombra-leve);
+    flex-shrink:0;
+    transition:.25s;
+}
+
+.avatar:hover{
+
+    transform:scale(1.05);
+
+}
+
+.avatar img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+/* ==========================================================
+   MENU INFERIOR
+========================================================== */
+
+.menu-inferior{
+
+    position:fixed;
+    width:100%;
+    height: 3rem;
+    background:var(--branco);
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    min-height:3rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    box-shadow:0 -6px 20px rgba(0,0,0,.05);
+    left:50%;
+    transform:translateX(-50%);
+    bottom:1rem;
+    width:calc(100% - 5rem);
+}
+
+
+
+.menu-inferior button{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:var(--cinza);
+    transition:.25s;
+
+}
+
+.menu-inferior span{
+
+    font-size: 2rem;
+
+}
+
+.menu-inferior p{
+
+    font-size: var(--fs-100);
+
+}
+
+.menu button.ativo{
+
+    color:var(--azul-principal);
+
+}
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Pluvion</title>
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+
+    <link rel="stylesheet" href="../reset.css">
+
+    <link rel="stylesheet" href="../css/paleta.css">
+    <link rel="stylesheet" href="../css/tipografias.css">
+    <link rel="stylesheet" href="../css/componentes.css">
+    <link rel="stylesheet" href="../css/animar.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/telas/dashboard.css">
+
+</head>
+
+<body>
+
+    <main class="dashboard container">
+
+        <!-- ======================================================
+             CABEÇALHO
+        ======================================================= -->
+
+        <header class="cabecalho">
+
+            <div class="usuario">
+
+                <div class="usuario-texto">
+
+                    <span id="saudacao">
+
+                        Bom dia,
+
+                    </span>
+
+                    <h2 id="nomeUsuario">
+
+                        Rodrigo
+
+                    </h2>
+
+                </div>
+
+                <button
+                    class="avatar">
+
+                    <img
+                        src="../images/avatar/avatar.png"
+                        alt="Foto do usuário">
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- ======================================================
+             CARD PRINCIPAL
+        ======================================================= -->
+
+        <section
+            id="cardPrincipal"
+            class="card card-risco">
+
+            <!-- preenchido pelo JS -->
+
+        </section>
+
+        <!-- ======================================================
+             ALERTAS
+        ======================================================= -->
+
+        <section class="alertas">
+
+            <div class="titulo-secao">
+
+                <h3>
+
+                    ALERTAS RECENTES
+
+                </h3>
+
+            </div>
+
+            <div
+                id="listaAlertas"
+                class="lista-alertas">
+
+                <!-- preenchido pelo JS -->
+
+            </div>
+
+        </section>
+
+        <!-- ======================================================
+             MENU INFERIOR
+        ======================================================= -->
+
+        <nav class="menu-inferior">
+
+            <button
+                class="menu-item ativo">
+
+                <span class="material-symbols-outlined">
+
+                    home
+
+                </span>
+
+                <span>
+
+                    Início
+
+                </span>
+
+            </button>
+
+            <button
+                class="menu-item">
+
+                <span class="material-symbols-outlined">
+
+                    map
+
+                </span>
+
+                <span>
+
+                    Mapa
+
+                </span>
+
+            </button>
+
+            <button
+                class="menu-item">
+
+                <span class="material-symbols-outlined">
+
+                    notifications
+
+                </span>
+
+                <span>
+
+                    Alertas
+
+                </span>
+
+            </button>
+
+        </nav>
+
+    </main>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

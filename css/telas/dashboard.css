@@ -1,0 +1,820 @@
+/* ==========================================================
+   DASHBOARD
+========================================================== */
+
+.dashboard{
+
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    min-height:100vh;
+    min-height:100dvh;
+    background:var(--fundo-claro);
+
+}
+
+/* ==========================================================
+   CONTEÚDO PRINCIPAL
+========================================================== */
+
+.dashboard{
+
+    padding:
+
+        max(env(safe-area-inset-top),2rem)
+
+        var(--esp-5)
+
+        calc(6rem + env(safe-area-inset-bottom))
+
+        var(--esp-5);
+
+    gap:var(--esp-5);
+
+}
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.cabecalho{
+
+    width:100%;
+
+}
+
+.usuario{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+
+}
+
+/* ==========================================================
+   TEXTO DO USUÁRIO
+========================================================== */
+
+.usuario-texto{
+
+    display:flex;
+    flex-direction:column;
+    gap:.45rem;
+
+}
+
+#saudacao{
+
+    font-size:var(--fs-300);
+    color:var(--cinza);
+
+}
+
+#nomeUsuario{
+
+    font-size:var(--fs-700);
+    font-weight:600;
+    color:var(--azul-escuro);
+    line-height:1;
+
+}
+
+/* ==========================================================
+   AVATAR
+========================================================== */
+
+.avatar{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:3.6rem;
+    height:3.6rem;
+
+    overflow:hidden;
+
+    border-radius:50%;
+
+    background:var(--azul-claro);
+
+    box-shadow:var(--sombra-leve);
+
+    flex-shrink:0;
+
+    transition:.25s;
+
+}
+
+.avatar:hover{
+
+    transform:scale(1.05);
+
+}
+
+.avatar img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+}
+
+/* ==========================================================
+   CARD PADRÃO
+========================================================== */
+
+.card{
+
+    width:100%;
+
+    background:var(--branco);
+
+    border-radius:var(--borda-grande);
+
+    padding:var(--esp-5);
+
+    box-shadow:var(--sombra-leve);
+
+}
+
+/* ==========================================================
+   CARD PRINCIPAL
+========================================================== */
+
+.card-risco{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:var(--esp-4);
+
+    min-height:15rem;
+
+    justify-content:center;
+
+}
+
+/* ==========================================================
+   SEÇÕES
+========================================================== */
+
+.alertas{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:var(--esp-3);
+
+}
+
+/* ==========================================================
+   TÍTULO DA SEÇÃO
+========================================================== */
+
+.titulo-secao{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.titulo-secao h3{
+
+    font-size:var(--fs-300);
+
+    font-weight:600;
+
+    color:var(--azul-escuro);
+
+    letter-spacing:.08em;
+
+}
+
+/* ==========================================================
+   LISTA DE ALERTAS
+========================================================== */
+
+.lista-alertas{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:var(--esp-3);
+
+}
+
+
+/* ==========================================================
+   CARD DE RISCO
+========================================================== */
+
+.titulo-card{
+
+    font-size:var(--fs-200);
+
+    font-weight:600;
+
+    color:var(--cinza);
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+.risco{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--esp-3);
+
+}
+
+.risco .material-symbols-outlined{
+
+    font-size:3rem;
+
+}
+
+.risco h2{
+
+    font-size:var(--fs-900);
+
+    font-weight:600;
+
+    line-height:1;
+
+}
+
+.atualizado{
+
+    color:var(--cinza);
+
+    font-size:var(--fs-200);
+
+}
+
+/* ==========================================================
+   NÍVEL DA ÁGUA
+========================================================== */
+
+.nivel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+}
+
+.nivel-topo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.nivel-topo span{
+
+    font-size:var(--fs-200);
+
+    color:var(--azul-escuro);
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   BARRA DE PROGRESSO
+========================================================== */
+
+.barra{
+
+    width:100%;
+
+    height:.7rem;
+
+    overflow:hidden;
+
+    border-radius:999px;
+
+    background:var(--azul-claro);
+
+}
+
+.barra-preenchimento{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:999px;
+
+    background:var(--azul-principal);
+
+    transition:width .8s ease;
+
+}
+
+/* ==========================================================
+   SEM DISPOSITIVO
+========================================================== */
+
+.sem-dispositivo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:1rem;
+
+}
+
+.sem-dispositivo .material-symbols-outlined{
+
+    font-size:4rem;
+
+    color:var(--azul-principal);
+
+}
+
+.sem-dispositivo h3{
+
+    color:var(--azul-escuro);
+
+    font-size:var(--fs-600);
+
+    font-weight:600;
+
+    line-height:1.3;
+
+}
+
+.sem-dispositivo p{
+
+    color:var(--cinza);
+
+    line-height:1.5;
+
+}
+
+.localizacao{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:.75rem 1rem;
+
+    border-radius:999px;
+
+    background:var(--azul-claro);
+
+}
+
+.localizacao strong{
+
+    color:var(--azul-escuro);
+
+    font-size:var(--fs-300);
+
+}
+
+/* ==========================================================
+   ALERTAS
+========================================================== */
+
+.card-alerta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:1rem;
+
+    padding:1rem;
+
+    border-radius:var(--borda-media);
+
+    background:var(--branco);
+
+    box-shadow:var(--sombra-leve);
+
+    transition:.25s;
+
+}
+
+.card-alerta:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--sombra-media);
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.status{
+
+    width:.45rem;
+
+    align-self:stretch;
+
+    border-radius:999px;
+
+}
+
+/* ==========================================================
+   TEXTO DO ALERTA
+========================================================== */
+
+.texto{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.45rem;
+
+    flex:1;
+
+}
+
+.texto h4{
+
+    color:var(--azul-escuro);
+
+    font-size:var(--fs-400);
+
+    font-weight:600;
+
+}
+
+.texto p{
+
+    color:var(--cinza);
+
+    font-size:var(--fs-200);
+
+}
+
+/* ==========================================================
+   ALERTA VAZIO
+========================================================== */
+
+.alerta-vazio{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:7rem;
+
+    padding:2rem;
+
+    border-radius:var(--borda-media);
+
+    background:var(--branco);
+
+    color:var(--cinza);
+
+    box-shadow:var(--sombra-leve);
+
+    line-height:1.5;
+
+}
+
+
+/* ==========================================================
+   CARD DE ALERTA
+========================================================== */
+
+.alerta-card{
+
+    background:var(--branco);
+
+    border-radius:var(--borda-grande);
+
+    padding:1.5rem;
+
+    box-shadow:var(--sombra-leve);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+}
+
+.alerta-topo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.alerta-topo h2{
+
+    font-size:var(--fs-500);
+
+    font-weight:600;
+
+    color:var(--azul-escuro);
+
+}
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:.45rem;
+
+}
+
+.status span{
+
+    width:.75rem;
+
+    height:.75rem;
+
+    border-radius:50%;
+
+}
+
+.status p{
+
+    font-size:var(--fs-200);
+
+    font-weight:500;
+
+}
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.status.normal span{
+
+    background:var(--verde);
+
+}
+
+.status.normal p{
+
+    color:var(--verde);
+
+}
+
+.status.atencao span{
+
+    background:var(--laranja);
+
+}
+
+.status.atencao p{
+
+    color:var(--laranja);
+
+}
+
+.status.perigo span{
+
+    background:var(--vermelho);
+
+}
+
+.status.perigo p{
+
+    color:var(--vermelho);
+
+}
+
+/* ==========================================================
+   MENSAGEM DO ALERTA
+========================================================== */
+
+.alerta-texto{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+}
+
+.alerta-texto h3{
+
+    font-size:var(--fs-600);
+
+    font-weight:600;
+
+    color:var(--azul-escuro);
+
+    line-height:1.2;
+
+}
+
+.alerta-texto p{
+
+    color:var(--cinza);
+
+    line-height:1.5;
+
+}
+
+/* ==========================================================
+   SEM DISPOSITIVO
+========================================================== */
+
+.sem-dispositivo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:1rem;
+
+    padding:2rem 1rem;
+
+}
+
+.sem-dispositivo img{
+
+    width:7rem;
+
+}
+
+.sem-dispositivo h3{
+
+    color:var(--azul-escuro);
+
+    font-size:var(--fs-500);
+
+}
+
+.sem-dispositivo p{
+
+    line-height:1.5;
+
+    color:var(--cinza);
+
+    max-width:18rem;
+
+}
+
+/* ==========================================================
+   BOTÃO
+========================================================== */
+
+#btnAtualizar{
+
+    margin-top:.5rem;
+
+}
+
+/* ==========================================================
+   MENU INFERIOR
+========================================================== */
+
+.menu{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:100%;
+
+    max-width:37.5rem;
+
+    background:var(--branco);
+
+    border-top:1px solid rgba(0,0,0,.08);
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    padding:.8rem 0 calc(.8rem + env(safe-area-inset-bottom));
+
+    box-shadow:0 -6px 20px rgba(0,0,0,.05);
+
+}
+
+.menu button{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:.25rem;
+
+    color:var(--cinza);
+
+    transition:.25s;
+
+}
+
+.menu button span{
+
+    font-size:1.7rem;
+
+}
+
+.menu button p{
+
+    font-size:.72rem;
+
+}
+
+.menu button.ativo{
+
+    color:var(--azul-principal);
+
+}
+
+.menu button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media(min-width:768px){
+
+    .dashboard{
+
+        padding:2rem;
+
+    }
+
+    .cabecalho{
+
+        padding:2rem 0;
+
+    }
+
+    .dashboard-conteudo{
+
+        gap:2rem;
+
+    }
+
+}
+
+@media(min-width:1200px){
+
+    .dashboard{
+
+        max-width:650px;
+
+    }
+
+}
+

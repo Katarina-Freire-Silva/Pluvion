@@ -96,4 +96,16 @@ botao.addEventListener("click",()=>{
 
 });
 
+/* ==========================================================
+   BOTÃO PULAR
+========================================================== */
+
+document
+    .getElementById("pular")
+    .addEventListener("click",()=>{
+
+        window.location.href = "cadastro.html";
+
+    });
+
 carregarPagina();

@@ -53,14 +53,11 @@ body{
     flex-direction:column;
     gap:.75rem;
     margin-block-end:var(--esp-1);
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
 
 }
 
 
-.campo:has(#senha){
-    margin-bottom:4rem;
-}
 
 .campo-senha{
 
@@ -109,4 +106,37 @@ body{
     align-self:center;
 
 }
+
+#term{
+    display: flex;
+    padding: 0;
+    margin: 0;
+    height: 2rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+
+}
+
+#termos{
+    display: flex;
+    width: 1.2rem;
+    margin-inline-end: 0.5rem;
+    border-radius: 2rem;
+
+}
+
+@media (max-height: 790px){
+.campo{
+    display:flex;
+    width:100%;
+    flex-direction:column;
+    gap:.75rem;
+    margin-block-end:var(--esp-1);
+
+}
+
+}
+
 

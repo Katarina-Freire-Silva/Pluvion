@@ -28,7 +28,7 @@ const paginas = [
 
     titulo:"Localização",
 
-    descricao:"Para que possamos proporcionar a melhor experiência para você, precisamos que forneça seu CEP.",
+    descricao:"Precisamos que informe seu CEP para personalizar seus alertas, afim de proporcionar a melhor experiência para você em nosso aplicativo.",
 
     tipo:"localizacao"
 
@@ -36,11 +36,11 @@ const paginas = [
 
 {
 
-    imagem:"../images/onboarding/on-3.svg",
+    imagem:"../images/onboarding/on-2.svg",
 
-    titulo:"Informe seu CEP",
+    titulo:"Localização",
 
-    descricao:"Utilizaremos o CEP para personalizar seus alertas.",
+    descricao:"Precisamos que informe seu CEP para personalizar seus alertas, afim de proporcionar a melhor experiência para você em nosso aplicativo.",
 
     tipo:"cep"
 
@@ -139,13 +139,43 @@ function carregarPagina(){
 
     descricao.textContent = pagina.descricao;
 
+    /* ==========================================================
+    INDICADORES
+    ========================================================== */
+
+    let indicadorAtual;
+
+    switch(pagina.tipo){
+
+        case "boasVindas":
+
+            indicadorAtual = 0;
+
+        break;
+
+        case "localizacao":
+
+        case "cep":
+
+            indicadorAtual = 1;
+
+        break;
+
+        case "confirmacao":
+
+            indicadorAtual = 2;
+
+        break;
+
+    }
+
     indicadores.forEach((item,index)=>{
 
         item.classList.toggle(
 
             "ativo",
 
-            index===paginaAtual
+            index === indicadorAtual
 
         );
 

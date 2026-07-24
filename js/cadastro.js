@@ -34,7 +34,59 @@ const feedbackEmail = document.getElementById("feedbackEmail");
 const feedbackSenha = document.getElementById("feedbackSenha");
 
 const termos = document.getElementById("termos");
-const botaoCriar = document.querySelector(".btn-login");
+const botaoCriar = document.querySelector("#btnCriar");
+
+const btnTermos = document.getElementById("btnTermos");
+const textoTermos = document.getElementById("termoTexto");
+
+let termosVisualizados = false;
+
+/* ==========================================================
+   RECUPERAR DADOS DO CADASTRO
+========================================================== */
+
+const cadastroSalvo = sessionStorage.getItem("cadastroTemp");
+
+if(cadastroSalvo){
+
+    const dados = JSON.parse(cadastroSalvo);
+
+    campoNome.value = dados.nome || "";
+    campoEmail.value = dados.email || "";
+    senha.value = dados.senha || "";
+
+    termosVisualizados = dados.termosVisualizados || false;
+
+}
+
+/* ==========================================================
+   BOTÃO DOS TERMOS
+========================================================== */
+
+
+btnTermos.addEventListener("click",()=>{
+
+    sessionStorage.setItem(
+
+        "cadastroTemp",
+
+        JSON.stringify({
+
+            nome: campoNome.value,
+
+            email: campoEmail.value,
+
+            senha: senha.value,
+
+            termosVisualizados: false
+
+        })
+
+    );
+
+    window.location.href="termos.html";
+
+});
 
 /* ==========================================================
    PALAVRAS BLOQUEADAS
@@ -85,6 +137,34 @@ function definirEstado(input, feedback, estado, mensagem){
     }
 
     feedback.textContent = mensagem;
+
+}
+
+/* ==========================================================
+   VALIDAÇÃO DOS TERMOS
+========================================================== */
+
+function validarTermos(mostrarErro = false){
+
+    if(!termosVisualizados){
+
+        if(mostrarErro){
+
+            btnTermos.classList.add("erro");
+            textoTermos.classList.add("erro");
+            termos.classList.add("erro");
+
+        }
+
+        return false;
+
+    }
+
+    btnTermos.classList.remove("erro");
+    textoTermos.classList.remove("erro");
+    termos.classList.remove("erro");
+
+    return termos.checked;
 
 }
 
@@ -315,11 +395,12 @@ function atualizarBotao(){
 
         &&
 
-        termos.checked;
+        validarTermos();
 
     botaoCriar.disabled = !valido;
 
 }
+
 
 campoNome.addEventListener("input",()=>{
 
@@ -345,7 +426,13 @@ senha.addEventListener("input",()=>{
 
 });
 
-termos.addEventListener("change",atualizarBotao);
+termos.addEventListener("change",()=>{
+
+    validarTermos(true);
+
+    atualizarBotao();
+
+});
 
 botaoCriar.disabled = true;
 
@@ -388,7 +475,7 @@ formulario.addEventListener("submit",(evento)=>{
 
         ||
 
-        !termos.checked
+        !validarTermos(true)
 
     ){
 
@@ -396,6 +483,7 @@ formulario.addEventListener("submit",(evento)=>{
 
     }
 
+    
     localStorage.setItem(
 
         "nomeUsuario",
@@ -407,3 +495,7 @@ formulario.addEventListener("submit",(evento)=>{
     window.location.href="bem-vindo.html";
 
 });
+
+validarTermos();
+atualizarBotao();
+

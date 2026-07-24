@@ -154,6 +154,20 @@ input{
     padding:3rem 0 0 3rem;
 }
 
+/* ==========================================================
+   BOTÃO DESABILITADO
+========================================================== */
+
+.btn:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+}
+
 
 /* ==========================================================
    COMPONENTES DO DASHBOARD EM DIANTE

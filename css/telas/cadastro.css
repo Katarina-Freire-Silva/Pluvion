@@ -66,15 +66,10 @@ body{
 }
 
 .campo-senha button{
-
     position:absolute;
-
     right:1rem;
-
     top:50%;
-
     transform:translateY(-50%);
-
 }
 
 .esqueci{
@@ -106,7 +101,7 @@ body{
 
 }
 
-#term{
+#termoTexto{
     display: flex;
     padding: 0;
     margin: 0;
@@ -118,13 +113,39 @@ body{
 
 }
 
+/* ==========================================================
+   ERRO NOS TERMOS
+========================================================== */
+
+
+p#termoTexto.erro{
+
+    color:var(--vermelho) !important;
+
+}
+
+
+button#btnTermos.erro{
+    border:1px solid var(--vermelho) !important;
+    color:var(--vermelho) !important;
+}
+
 #termos{
     display: flex;
     width: 1.2rem;
     margin-inline-end: 0.5rem;
     border-radius: 2rem;
+    accent-color:var(--azul-principal);
 
 }
+
+#termos.erro{
+
+    accent-color:var(--vermelho);
+
+}
+
+
 
 @media (max-height: 790px){
 .campo{

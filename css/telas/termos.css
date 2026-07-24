@@ -1,0 +1,151 @@
+
+/* ==========================================================
+   INTRODUÇÃO DO USUÁRIO (BEM-VINDO)
+========================================================== */
+
+body{
+
+    background:var(--branco);
+
+}
+
+.bem-vindo{
+    display:flex;
+    flex-direction:column;
+}
+
+.bem-vindo-conteudo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:clamp(.5rem,2vw,1.25rem);
+    padding-top: clamp(3rem,3vw,50rem);
+}
+
+.bem-vindo-conteudo img{
+    display:flex;
+    height: 10rem;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.bem-vindo-conteudo p{
+    max-width:18rem;
+    margin-top:0;
+}
+
+
+#titulo{
+    margin-bottom:clamp(1rem,3vh,2rem);
+}
+
+#descricao{
+    margin-top:0;
+}
+
+#usarCep{
+    width: 18rem;
+    margin-bottom: 1rem;
+
+}
+
+#cep{
+    color: var(--cinza);
+}
+
+#voltar{
+    padding-top: 0;
+    padding-bottom: clamp(1rem,1vh,1rem);;
+}
+
+.alterar-endereco{
+
+    text-align:center;
+
+    font-size:var(--fs-200);
+
+    color:var(--preto);
+
+}
+
+.confirmacao-endereco{
+    display:flex;
+    max-width: 17rem;
+    flex-direction:column;
+    gap:.5rem;
+    margin-bottom: 1rem;
+}
+
+.confirmacao-endereco p{
+    margin:0;
+    display:flex;
+    width: 16rem;
+    color:var(--branco);
+    flex-direction:column;
+    background:var(--azul-principal);
+    padding: 0.7rem;
+    border-radius:var(--borda-pequena);
+    text-align:center;
+    align-items:center;
+}
+
+
+.indicadores{
+    display:flex;
+    justify-content:center;
+    gap:0.1rem;
+    margin-bottom:var(--esp-4);
+}
+
+.indicadores span{
+    width:.63rem;
+    height:.63rem;
+    border-radius:50%;
+    background:var(--cinza);
+    transition:.35s;
+}
+
+.bem-vindo-acoes{
+    display:flex;
+    width:18rem;
+    flex-direction:column;
+    align-self:center;
+    justify-content: center;
+    gap:var(--esp-4);
+    padding-top:clamp(1rem,7vh,9rem);
+}
+
+.indicadores .ativo{
+    width:.90rem;
+    border-radius:40%;
+    background:var(--azul-escuro);
+
+}
+
+@media (max-height: 790px){
+
+    .bem-vindo-conteudo{
+
+        padding-top:2rem;
+        gap:.26rem;
+
+    }
+
+    #voltar{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .confirmacao-endereco p{
+        padding: 0.6rem;
+    }
+
+    .bem-vindo-acoes{
+
+        padding-top:0.5rem;
+
+    }
+
+}

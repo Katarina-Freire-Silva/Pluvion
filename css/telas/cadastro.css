@@ -132,12 +132,6 @@ body{
     width:100%;
     flex-direction:column;
     gap:.75rem;
-    margin: 0;
-    padding: 0;
-}
-
-.campo:has(#nome){
-        margin-block-end: 0;
 }
 
 }

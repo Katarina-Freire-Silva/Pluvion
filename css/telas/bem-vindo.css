@@ -49,6 +49,10 @@ body{
 
 }
 
+#cep{
+    color: var(--cinza);
+}
+
 #voltar{
     padding-top: 0;
     padding-bottom: clamp(1rem,1vh,1rem);;

@@ -100,6 +100,52 @@ input{
     border-bottom-left-radius:var(--borda-media);
 }
 
+/* ==========================================================
+   ESTADOS DOS INPUTS
+========================================================== */
+
+.input-verde{
+    border:1px solid var(--verde);
+}
+
+.input-amarelo{
+    border:1px solid var(--laranja);
+}
+
+.input-vermelho{
+    border:1px solid var(--vermelho);
+}
+
+/* ==========================================================
+   FEEDBACK
+========================================================== */
+
+.feedback{
+    display:block;
+    min-height:1rem;
+    font-size:var(--fs-100);
+    font-weight:500;
+    margin-inline-start: 1.5rem;
+    transition:.25s;
+}
+
+.feedback-verde{
+    color:var(--verde);
+}
+
+.feedback-amarelo{
+    color:var(--laranja);
+}
+
+.feedback-vermelho{
+    color:var(--vermelho);
+}
+
+/* ==========================================================
+   BOTÃO DE VOLTAR
+========================================================== */
+
+
 .voltar{
     display:flex;
     justify-content:flex-start;

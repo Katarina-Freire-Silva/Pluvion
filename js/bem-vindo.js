@@ -26,9 +26,9 @@ const paginas = [
 
     imagem:"../images/onboarding/on-2.svg",
 
-    titulo:"Como deseja filtrar sua localização?",
+    titulo:"Localização",
 
-    descricao:"Escolha a forma que preferir.",
+    descricao:"Para que possamos proporcionar a melhor experiência para você, precisamos que forneça seu CEP.",
 
     tipo:"localizacao"
 
